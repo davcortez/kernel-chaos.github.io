@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Poc de un infostealer polimórfico con IA que roba tus credenciales desde VSCode
-date: 2024-07-7 10:18:00
+date: 2025-10-06 10:18:00
 categories: [PoC, Research, Extension, Supply Chain Attacks]
 ---
 
