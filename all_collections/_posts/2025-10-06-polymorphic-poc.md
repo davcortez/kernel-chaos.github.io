@@ -81,7 +81,7 @@ Mientras que las acciones que ejecuta van desde:
 * Se pueden dar errores en el código generado por IA que generan comportamientos inconsistentes durante las ejecuciones.
 
 **Conclusión**
-Para esta PoC, se creo un malware capaz de generar perfectamente un infostealer malicioso basado en código generado por OpenAI y ejecutarlo directamente en memoria, sin crear ningún archivo en disco. Dada su naturaleza polimórfica y el uso de técnicas de evasión, logra pasar inadvertido ante controles tradicionales de seguridad. 
+Para esta PoC, se creo una prueba de concepto (PoC) capaz de generar dinámicamente un infostealer malicioso basado en código generado por OpenAI y ejecutarlo directamente en memoria, sin crear ningún archivo en disco. Dada su naturaleza polimórfica y el uso de técnicas de evasión, logra pasar inadvertido ante controles tradicionales de seguridad. 
 Esto demuestra cómo una extensión aparentemente inocente puede convertirse en una amenaza real si se aprovechan tecnologías emergentes como la IA combinadas con técnicas clásicas de evasión.
 
 **Referencias**
