@@ -25,20 +25,20 @@ Ahora, revisemos los vectores de ataque para comprometer Visual Studio Code de f
  * Un adversario crea una extensión maliciosa y publicarla en el VSCode Marketplace.
  * Un adversario crea una tarea maliciosa y la commitea a un repositorio público utilizado por desarrolladores.
 
-Para esta PoC, simularemos ser un atacante cuya intención principal es robar credenciales. Para esto, crearemos una extensión maliciosa en un entorno controlado e instalandola desde un archivo vsix.
+Para esta PoC, simularemos ser un atacante cuya intención principal es robar credenciales. Para esto, crearemos una extensión maliciosa con fines educativos en un **entorno controlado** e instalandola desde un archivo vsix.
 
-Dato interesante: Podemos crear extensiones y otros artefactos como *temas*, *code snippets*, *keymaps*, *extension packs*, *web extensions*, *paquetes de lenguaje* y *notebook renderers* usando la herramienta recomendada por VSCode llamada Yeoman.
+**Dato interesante:** Podemos crear extensiones y otros artefactos como *temas*, *code snippets*, *keymaps*, *extension packs*, *web extensions*, *paquetes de lenguaje* y *notebook renderers* usando la herramienta recomendada por VSCode llamada Yeoman.
 
 En un escenario real, un atacante podría usar técnicas como la ingeniería social para hacer que desarrolladores instalen nuestra extensión maliciosa, valiendose del hecho de que muchas personas no realizan due diligence y se dejan llevar por métricas de vanidad, como el número de descargas, el nombre del autor o incluso por tener un badge de verificación (esto último no garantiza que no puedas ser engañado).
 
 A través de datos sintéticos —que se pueden comprar a un bajo costo en ciertos portales especializados en vender estrellas falsas en GitHub, reseñas, etc.— pueden generarse señales de confianza en las posibles víctimas.
 
 Ahora queda pensar qué tipo de extensión y nombre usar... 
-La extensión a desarrollar pretendera tendra el nombre "Qwen Plus", que hace referencia al modelo desarrollador por Alibaba. 
+La extensión a desarrollar tendrá el nombre "Qwen Plus", que hace referencia al modelo desarrollador por Alibaba. 
 
-Nota: Se puede usar un paquete NPM en una extensión de VSCode; sin embargo, me decidí a probar algo diferente: desarrollar lo que sería un AI-SYNTHESIZED, POLYMORPHIC INFOSTEALER, inspirado en un paper muy interesante: AI-SYNTHESIZED, POLYMORPHIC KEYLOGGER WITH ON-THE-FLY PROGRAM MODIFICATION de HYAS Labs.
+**Nota:** Se puede usar un paquete NPM en una extensión de VSCode; sin embargo, me decidí a probar algo diferente: desarrollar lo que sería un AI-SYNTHESIZED, POLYMORPHIC INFOSTEALER, inspirado en un paper muy interesante: AI-SYNTHESIZED, POLYMORPHIC KEYLOGGER WITH ON-THE-FLY PROGRAM MODIFICATION de HYAS Labs.
 
-### ¿Por qué un atacante se enfocaría en los desarrolladores? 
+**¿Por qué un atacante se enfocaría en los desarrolladores?**
 Porque, al comprometer a un desarrollador, podría ganar acceso a recursos críticos como el código fuente, credenciales sensibles y, lo que es aún más peligroso, a entornos de producción.
 
 Crear una extensión para VSCode no es complicado. Lo realmente retador viene después, cuando tienes que pasar por las medidas de seguridad del marketplace que se detallan en su web oficial. entre ellas:
@@ -51,7 +51,7 @@ Crear una extensión para VSCode no es complicado. Lo realmente retador viene de
 
  * La funcionalidad Workspace Trust te permite decidir si el código en la carpeta de tu proyecto puede ser ejecutado por VS Code y las extensiones sin tu aprobación explícita. De alli que el equipo de Microsoft nos comente: "Solo deberías instalar y ejecutar aquellas extensiones de las que confíes en el publisher.". Entonces "You click 'Trust', you lose." Sin embargo, el problema radica en que la extensión se ejecuta antes del modal de Workspace Trust. Esto significa que incluso si el usuario nunca da permiso explícito, el código malicioso podría haberse ejecutado ya.
 
-¿Qué hace exactamente Workspace Trust? 
+**¿Qué hace exactamente Workspace Trust?**
 Permite desactivar funcionalidades como tareas, debugging, ciertas configuraciones y extensiones, reduciendo así el riesgo cuando se abre código no confiable. Sin embargo, una forma de saltarse esta protección es instalando una extensión directamente desde un archivo .vsix ...lo que utilicé para desarrollar la PoC.
 
 Otro detalle interesante que encontré en otros investigaciones, es el hecho que una extensión tiene los mismos permisos que cualquier otro proceso de usuario; es decir, no existe sandboxing. Es decir que una extensión es libre de leer y escribir archivos en disco, hacer peticiones de red, o llamar a otras APIs y librerías disponibles. Además, todas las extensiones instaladas en VSCode se actualizan automáticamente.
@@ -75,16 +75,16 @@ Mientras que las acciones que ejecuta van desde:
  * Recolección de información (footprinting) antes de lanzar cualquier tipo de ataque, ya que al tener datos del sistema permite al malware-AI tomar mejores decisiones y responder de forma correcta.
  * Solicitar el código necesario para exfiltrar credenciales a un endpoint de un servidor (en este caso local). También se podría usar un canal de Slack o Teams (no aplica en este PoC).
 
-Nota: Las peticiones para generar el código malicioso se hacen simulando ser una petición correspondiente a telemetría luego de unos cuantos minutos y saltandose los filtros del modelo empleado.
+**Nota:** Las peticiones para generar el código malicioso se hacen simulando ser una petición correspondiente a telemetría luego de unos cuantos minutos y saltandose los filtros del modelo empleado.
 
-## Limitantes
+**Limitantes**
 * Se pueden dar errores en el código generado por IA que generan comportamientos inconsistentes durante las ejecuciones.
 
-## Conclusión
+**Conclusión**
 Para esta PoC, se creo un malware capaz de generar perfectamente un infostealer malicioso basado en código generado por OpenAI y ejecutarlo directamente en memoria, sin crear ningún archivo en disco. Dada su naturaleza polimórfica y el uso de técnicas de evasión, logra pasar inadvertido ante controles tradicionales de seguridad. 
 Esto demuestra cómo una extensión aparentemente inocente puede convertirse en una amenaza real si se aprovechan tecnologías emergentes como la IA combinadas con técnicas clásicas de evasión.
 
-Referencias:
+**Referencias**
 https://code.visualstudio.com/docs/configure/extensions/extension-runtime-security
 https://code.visualstudio.com/api/get-started/extension-anatomy
 https://code.visualstudio.com/api/working-with-extensions/publishing-extension
