@@ -34,7 +34,7 @@ En un escenario real, un atacante podría usar técnicas como la ingeniería soc
 A través de datos sintéticos —que se pueden comprar a un bajo costo en ciertos portales especializados en vender estrellas falsas en GitHub, reseñas, etc.— pueden generarse señales de confianza en las posibles víctimas.
 
 Ahora queda pensar qué tipo de extensión y nombre usar... 
-La extensión a desarrollar tendrá el nombre "Qwen Plus", que hace referencia al modelo desarrollador por Alibaba. 
+La extensión a desarrollar tendrá el nombre "Qwen Plus", que hace referencia al modelo de Alibaba. 
 
 **Nota:** Se puede usar un paquete NPM en una extensión de VSCode; sin embargo, me decidí a probar algo diferente: desarrollar lo que sería un AI-SYNTHESIZED, POLYMORPHIC INFOSTEALER, inspirado en un paper muy interesante: AI-SYNTHESIZED, POLYMORPHIC KEYLOGGER WITH ON-THE-FLY PROGRAM MODIFICATION de HYAS Labs.
 
@@ -85,11 +85,11 @@ Para esta PoC, se creo un malware capaz de generar perfectamente un infostealer 
 Esto demuestra cómo una extensión aparentemente inocente puede convertirse en una amenaza real si se aprovechan tecnologías emergentes como la IA combinadas con técnicas clásicas de evasión.
 
 **Referencias**
-https://code.visualstudio.com/docs/configure/extensions/extension-runtime-security
-https://code.visualstudio.com/api/get-started/extension-anatomy
-https://code.visualstudio.com/api/working-with-extensions/publishing-extension
-https://github.com/microsoft/vscode/issues/52116
-https://www.reversinglabs.com/blog/malicious-helpers-vs-code-extensions-observed-stealing-sensitive-information
-https://www.aquasec.com/blog/can-you-trust-your-vscode-extensions/
-https://www.reversinglabs.com/blog/malicious-pull-request-infects-vscode-extension
-https://www.hyas.com/hubfs/Downloadable%20Content/HYAS-AI-Augmented-Cyber-Attack-WP-1.1.pdf
+- [VS Code Extension Runtime Security](https://code.visualstudio.com/docs/configure/extensions/extension-runtime-security)
+- [Getting Started with VS Code Extension Anatomy](https://code.visualstudio.com/api/get-started/extension-anatomy)
+- [Publishing Your VS Code Extension](https://code.visualstudio.com/api/working-with-extensions/publishing-extension)
+- [GitHub Issue #52116](https://github.com/microsoft/vscode/issues/52116)
+- [Malicious Helpers in VS Code Extensions](https://www.reversinglabs.com/blog/malicious-helpers-vs-code-extensions-observed-stealing-sensitive-information)
+- [Can You Trust Your VS Code Extensions?](https://www.aquasec.com/blog/can-you-trust-your-vscode-extensions/)
+- [Malicious Pull Request Infects VS Code Extension](https://www.reversinglabs.com/blog/malicious-pull-request-infects-vscode-extension)
+- [HYAS AI-Augmented Cyber Attack White Paper](https://www.hyas.com/hubfs/Downloadable%20Content/HYAS-AI-Augmented-Cyber-Attack-WP-1.1.pdf)
