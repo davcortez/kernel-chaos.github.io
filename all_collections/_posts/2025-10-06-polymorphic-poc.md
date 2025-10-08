@@ -77,6 +77,13 @@ Mientras que las acciones que ejecuta van desde:
 
 **Nota:** Las peticiones para generar el código malicioso se hacen simulando ser una petición correspondiente a telemetría luego de unos cuantos minutos y saltandose los filtros del modelo empleado.
 
+Y bueno les dejo PoC en cuestión...
+<iframe width="560" height="315" 
+src="https://www.youtube.com/embed/lj3mWm1dBI8" 
+title="PoC" frameborder="0" 
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen></iframe>
+
 **Limitantes**
 * Se pueden dar errores en el código generado por IA que generan comportamientos inconsistentes durante las ejecuciones.
 
