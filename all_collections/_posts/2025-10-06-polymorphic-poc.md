@@ -22,8 +22,8 @@ Podríamos seguir enumerando uno por uno los incidentes relacionados con las ext
 Ahora, revisemos los vectores de ataque para comprometer Visual Studio Code de forma remota
  * Un adversario compromete el proyecto open source de VSCode o una de sus dependencias para introducir código malicioso.
  * Un adversario clona el repositorio de VSCode, introduce código malicioso e intenta engañar a los usuarios para que descarguen la versión comprometida.
- * Un adversario crea una extensión maliciosa y publicarla en el VSCode Marketplace.
- * Un adversario crea una tarea maliciosa y la commitea a un repositorio público utilizado por desarrolladores.
+ * Un adversario crea una extensión maliciosa y la publica en el VSCode Marketplace.
+ * Un adversario crea una tarea maliciosa y hace un commit a un repositorio público utilizado por desarrolladores.
 
 Para esta PoC, simularemos ser un atacante cuya intención principal es robar credenciales. Para esto, crearemos una extensión maliciosa con fines educativos en un **entorno controlado** e instalandola desde un archivo vsix.
 
