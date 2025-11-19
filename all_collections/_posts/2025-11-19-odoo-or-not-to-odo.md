@@ -30,7 +30,8 @@ para entender que hace cada query, desglosare parte por parte:
 ```country:"US"``` -> Limita los resultados a servidores ubicados en Estados Unidos.
 
 Algunas de las instancias corriendo Odoo que aparecen en los resultados pueden redireccionar a un sitio web. Algo totalmente normal, ya que Odoo también nos da la posibilidad de crear un sitio web, usando la herramienta de arrastrar y soltar (drag and drop), más info pueden encontrar en el siguiente enlace: 
-- https://www.odoo.com/blog/business-hacks-1/how-to-create-your-own-website-for-free-and-easily-1717. 
+- https://www.odoo.com/blog/business-hacks-1/how-to-create-your-own-website-for-free-and-easily-1717.
+
 Sin embargo, nuestro interes va en encontrar algo más jugoso, como listar las bases de datos disponibles, y acceder al panel para obtener un backup, eliminar o crear una nueva base de datos.
 
 Basta con incluir la rutas siguientes rutas al final de la url que estamos examinando:
@@ -47,9 +48,10 @@ Basta con incluir la rutas siguientes rutas al final de la url que estamos exami
 
 
 Dato de color, puede que algunas de las instancias corriendo Odoo usen credenciales por defecto, facilitando la tarea a un atacante. Ahora, probar contra cada una de las intancias 1 a 1 sería una tarea que demandaría una buena cantidad de tiempo y no sería la mejor forma, de allí que, una herramienta como
-lo es ***OdooMap*** desarrollada por ***Karrab*** nos facilite la tarea automatizando parte de las tareas a realizar {reconocimiento, recolección de información, enumeración de bases de datos, fuerza bruta de credenciales, enumeración de modelo, extracción de datos, obtener información de los plugins instalados}. (https://karrab7.com/articles/Pentesting-Odoo-Applications-with-OdooMap)
+lo es ***OdooMap*** desarrollada por ***Karrab*** nos facilite la tarea automatizando parte de las tareas a realizar ***{reconocimiento, recolección de información, enumeración de bases de datos, fuerza bruta de credenciales, enumeración de modelo, extracción de datos, obtener información de los plugins instalados}***. (https://karrab7.com/articles/Pentesting-Odoo-Applications-with-OdooMap)
 
 Hasta aca, se deben estar preguntando ***¿Por qué es peligroso que estén expuestas las rutas mencionadas previamente?***. 
+
 Y bueno, aca viene lo bueno. Si existe una instancia que no tiene la autenticación activada, un atacante podría:
 - Crear/administrar bases de datos, acceder a información de clientes, finanzas y empleados. 
 - Impactar al negocio de forma crítica eliminando todas las bases de datos de la organización.
