@@ -39,12 +39,14 @@ Basta con incluir la rutas siguientes rutas al final de la url que estamos exami
 
 - ***https://example.com/web/database/selector*** -> esta ruta nos permite ver la lista completa de las bases de datos disponibles, seleccionar y cambiar entre diferentes bases de datos, y potencialmente acceder a bases de datos de diferentes clientes o entornos.
 
-
 ![Gestor de base de datos de Odoo Expuesto sin clave](/assets/images/odoo-db-manager-exposed.png)
+![Configurar Clave master de Odoo](/assets/images/odoo-master-pass.png)
+***Gestor de base de datos de Odoo Expuesto sin clave***
 
 ![Gestor de base de datos de Odoo](/assets/images/odoo-db-manager.png)
+***Gestor de base de datos de Odoo***
 
-![Configurar Clave master de Odoo](/assets/images/odoo-master-pass.png)
+
 
 
 Dato de color, puede que algunas de las instancias corriendo Odoo usen credenciales por defecto, facilitando la tarea a un atacante. Ahora, probar contra cada una de las intancias 1 a 1 sería una tarea que demandaría una buena cantidad de tiempo y no sería la mejor forma, de allí que, una herramienta como
