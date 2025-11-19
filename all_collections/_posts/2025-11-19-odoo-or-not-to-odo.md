@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Odoo Bajo la Lupa: ¿Están tus Instancias a salvo?
+title: Odoo Bajo la Lupa ¿Están tus Instancias a salvo?
 date: 2025-11-19 10:18:00
 categories: [Odoo, Security, Exposed]
 ---
